@@ -36,8 +36,8 @@ function Article(): JSX.Element {
 
 const styles = StyleSheet.create({
   articleContainer: {
-    marginTop: 30, 
-    marginHorizontal: 50,
+    marginTop: 10, 
+    marginHorizontal: 30,
   },
   articleHeader: {
     flexDirection: 'row',

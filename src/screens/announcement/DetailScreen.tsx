@@ -15,7 +15,7 @@ function DetailScreen(): JSX.Element {
         06.33, 22 September 2023
       </Text>
       <View style={styles.divider}></View>
-      <Image style={{ marginBottom: 11 }} source={require('../../assets/images/articles/content.png')} />
+      <Image style={{ marginBottom: 11, width: '100%' }} source={require('../../assets/images/articles/content.png')} />
       <Text style={styles.detailText}>
       Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. 
       </Text>
@@ -26,7 +26,7 @@ function DetailScreen(): JSX.Element {
 const styles = StyleSheet.create({
   detailContainer: {
     marginTop: 60, 
-    marginHorizontal: 50,
+    marginHorizontal: 30,
   },
   detailHeader: {
     fontSize: 16,

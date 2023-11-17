@@ -68,7 +68,7 @@ function Menu(): JSX.Element {
 const styles = StyleSheet.create({
   menuContainer: {
     marginTop: 30, 
-    marginHorizontal: 50, 
+    marginHorizontal: 30, 
     flexDirection: 'row', 
     justifyContent: 'space-between',
   },

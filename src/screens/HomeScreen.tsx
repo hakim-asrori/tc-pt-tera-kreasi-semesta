@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 30 
   },
   bodyContentTopMenu: {
-    marginHorizontal: 50, 
+    marginHorizontal: 30, 
     marginTop: 20,
     marginBottom: -10, 
     flexDirection: 'row',

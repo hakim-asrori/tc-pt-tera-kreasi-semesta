@@ -11,7 +11,7 @@ function Announcement({navigation}: {navigation: any}): JSX.Element {
   return (
     <View style={styles.announcementContainer}>
       <TouchableOpacity onPress={() => {
-        navigation.navigate('Details')
+        navigation.navigate('DetailStack')
       }}>
         <Text style={styles.announcementText}>Pengumuman</Text>
         <View style={styles.announcementContent}>
@@ -31,7 +31,7 @@ function Announcement({navigation}: {navigation: any}): JSX.Element {
 const styles = StyleSheet.create({
   announcementContainer: {
     marginTop: 20, 
-    marginHorizontal: 50, 
+    marginHorizontal: 30, 
   },
   announcementText: {
     fontSize: 14,

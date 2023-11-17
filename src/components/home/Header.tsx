@@ -57,7 +57,7 @@ function Header(): JSX.Element {
 const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
-    marginHorizontal: 50,
+    marginHorizontal: 30,
     marginTop: 50,
   },
   headerSaldo: {
