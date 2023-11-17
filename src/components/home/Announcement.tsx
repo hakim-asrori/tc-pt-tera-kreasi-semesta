@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -11,8 +11,7 @@ function Announcement({navigation}: {navigation: any}): JSX.Element {
   return (
     <View style={styles.announcementContainer}>
       <TouchableOpacity onPress={() => {
-        // navigation.navigate('')
-        console.log("OK");
+        navigation.navigate('Details')
       }}>
         <Text style={styles.announcementText}>Pengumuman</Text>
         <View style={styles.announcementContent}>

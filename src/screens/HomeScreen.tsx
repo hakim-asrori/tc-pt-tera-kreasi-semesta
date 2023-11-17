@@ -30,7 +30,7 @@ function HomeScreen({navigation}: {navigation: any}): JSX.Element {
             </View>
             
             <Menu />
-            <Announcement navigation={undefined} />
+            <Announcement navigation={navigation} />
             <Advertisement />
             <Article />
           </View>

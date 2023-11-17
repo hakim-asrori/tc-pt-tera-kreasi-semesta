@@ -4,7 +4,7 @@ import {
   Dimensions,
   StyleSheet,
   Image,
-  Text,
+  ScrollView,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 

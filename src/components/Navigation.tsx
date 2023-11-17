@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StyleSheet} from 'react-native'
+import {View, TouchableOpacity} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -10,11 +10,29 @@ import NotificationScreen from "../screens/NotificationScreen"
 import ProfileScreen from "../screens/ProfileScreen"
 import SplashScreen from "../screens/SplashScreen"
 import DetailScreen from '../screens/announcement/DetailScreen';
+import QrcodeScreen from '../screens/QrcodeScreen';
 
 const Tab = createBottomTabNavigator();
-const Stack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
 
-function App(): JSX.Element {
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <HomeStack.Screen name="Details" component={DetailScreen} options={{ 
+        title: 'Detail Pengumuman',
+        headerTransparent: true,
+        headerTitleAlign: 'center',
+        headerTitleStyle: {
+          fontSize: 15,
+          fontWeight: '700',
+        },
+       }} />
+    </HomeStack.Navigator>
+  );
+}
+
+function Navigation(): JSX.Element {
   const [showTabs, setShowTabs] = useState(false);
 
   useEffect(() => {
@@ -45,6 +63,8 @@ function App(): JSX.Element {
             iconName = 'bell'
           } else if (route.name == 'Profile') {
             iconName = 'user'
+          } else if (route.name == 'Qrcode') {
+            iconName = 'qrcode'
           }
 
           return <IconFontawesome name={iconName} size={15} color={color} />
@@ -60,32 +80,50 @@ function App(): JSX.Element {
       >
         <Tab.Screen 
         name="Home" 
-        component={HomeScreen}
+        component={HomeStackScreen}
         options={{ title: 'Home', headerShown: false }} 
         />
 
         <Tab.Screen 
         name="Market" 
         component={MarketScreen} 
+        options={{ title: 'Pasar' }}
+        />
+
+        <Tab.Screen 
+        name="Qrcode" 
+        component={QrcodeScreen}
+        options={{ 
+          tabBarIcon: ({focused}) => (
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <IconFontawesome name='qrcode' size={15} color='black' />
+            </View>
+          ),
+          tabBarButton: (props) => (
+            <TouchableOpacity style={{ top: -30 }}>
+              <View style={{ width: 52, height: 52, backgroundColor: '#4A50A4', justifyContent: 'center', alignItems: 'center', borderRadius: 50 }}>
+                <IconFontawesome name='qrcode' size={27} color='white' />
+              </View>
+            </TouchableOpacity>
+          ),
+          tabBarLabel: 'QRIS',
+         }} 
         />
 
         <Tab.Screen 
         name="Notification" 
         component={NotificationScreen} 
+        options={{ title: 'Notifikasi' }}
         />
         
         <Tab.Screen 
         name="Profile" 
         component={ProfileScreen} 
+        options={{ title: 'Profil' }}
         />
       </Tab.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  tabBar: {
-  }
-})
-
-export default App;
+export default Navigation;

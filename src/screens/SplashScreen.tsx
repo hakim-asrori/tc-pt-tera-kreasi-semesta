@@ -9,13 +9,13 @@ import LinearGradient from 'react-native-linear-gradient';
 
 function SplashScreen({navigation}: {navigation: any}): JSX.Element {
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      navigation.replace('Home')
-    }, 3000);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     navigation.replace('Home')
+  //   }, 3000);
 
-    return () => clearTimeout(timeout);
-  }, [navigation])
+  //   return () => clearTimeout(timeout);
+  // }, [navigation])
 
   return (
     <LinearGradient 
