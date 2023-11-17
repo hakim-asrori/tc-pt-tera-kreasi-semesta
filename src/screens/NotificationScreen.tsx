@@ -4,7 +4,7 @@ import {
   Text
 } from 'react-native';
 
-function AboutScreen(): JSX.Element {
+function NotificationScreen(): JSX.Element {
   return (
     <View>
       <Text>About Screen</Text>
@@ -12,4 +12,4 @@ function AboutScreen(): JSX.Element {
   )
 }
 
-export default AboutScreen
+export default NotificationScreen
