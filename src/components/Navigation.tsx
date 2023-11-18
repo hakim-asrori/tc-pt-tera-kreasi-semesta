@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity} from 'react-native'
+import {View, TouchableOpacity, Text} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -100,10 +100,13 @@ function Navigation(): JSX.Element {
             </View>
           ),
           tabBarButton: (props) => (
-            <TouchableOpacity style={{ top: -30 }}>
+            <TouchableOpacity style={{ top: -15, alignItems: 'center', justifyContent: 'center' }}>
               <View style={{ width: 52, height: 52, backgroundColor: '#4A50A4', justifyContent: 'center', alignItems: 'center', borderRadius: 50 }}>
                 <IconFontawesome name='qrcode' size={27} color='white' />
               </View>
+              <Text style={{ color: '#C7C7C7', fontWeight: '700', fontSize: 9, alignItems: 'center', justifyContent: 'center', marginTop: 6 }}>
+                QRIS
+              </Text>
             </TouchableOpacity>
           ),
           tabBarLabel: 'QRIS',
