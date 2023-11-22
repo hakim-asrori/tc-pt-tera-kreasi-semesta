@@ -4,29 +4,62 @@ import {
   Text,
   StyleSheet,
   Image,
-  ScrollView
+  ScrollView,
+  Dimensions,
+  TouchableOpacity
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import IconFontawesome from 'react-native-vector-icons/FontAwesome6';
 
-function DetailScreen(): JSX.Element {
+export const SLIDER_WIDTH = Dimensions.get('window').width;
+
+function DetailScreen({navigation}: {navigation: any}): JSX.Element {
   return (
-    <ScrollView style={styles.detailContainer}>
-      <Text style={styles.detailHeader}>Qorem ipsum dolor sit amet, dolor sit amet consectetur adipiscing elit.</Text>
-      <Text style={styles.detailTime}>
-        06.33, 22 September 2023
-      </Text>
-      <View style={styles.divider}></View>
-      <Image style={{ marginBottom: 11, width: '100%' }} source={require('../../assets/images/articles/content.png')} />
-      <Text style={styles.detailText}>
-      Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. 
-      </Text>
-    </ScrollView>
+      <LinearGradient colors={['#FFFFFF', '#FFFFFF', '#FFFFFF','#FFFFFF', '#FFFFFF','#5ACCFF']}
+        start={{ x: 0, y: 1.7 }}
+        end={{ x: 1, y: 0 }} 
+        style={styles.bubbleBackground}>
+        <View style={styles.navigationContainer}>
+          <TouchableOpacity onPress={() => {
+            navigation.navigate('HomeStack')
+          }} style={{  zIndex: 99 }}>
+            <IconFontawesome name="arrow-left" color='black' size={20} /> 
+          </TouchableOpacity>
+          <Text style={styles.navigationText}>Detail Pengumuman</Text>
+        </View>
+        <ScrollView style={styles.detailContainer}>
+            <Text style={styles.detailHeader}>Qorem ipsum dolor sit amet, dolor sit amet consectetur adipiscing elit.</Text>
+            <Text style={styles.detailTime}>
+              06.33, 22 September 2023
+            </Text>
+            <View style={styles.divider}></View>
+            <Image style={{ marginBottom: 11, width: '100%' }} source={require('../../assets/images/articles/content.png')} />
+            <Text style={styles.detailText}>
+            Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. 
+            </Text>
+        </ScrollView>
+      </LinearGradient>
   )
 }
 
 const styles = StyleSheet.create({
-  detailContainer: {
-    marginTop: 60, 
+  navigationContainer: {
+    marginTop: 50,
     marginHorizontal: 30,
+  },
+  navigationText: {
+    fontSize: 15,
+    textAlign: 'center',
+    marginTop: -21,
+    color: 'black',
+    fontWeight: '700',
+  },
+  detailContainer: {
+    marginTop: 30, 
+    marginHorizontal: 30,
+  },
+  bubbleBackground: {
+    height: '100%',
   },
   detailHeader: {
     fontSize: 16,

@@ -19,15 +19,7 @@ function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="HomeStack" component={HomeScreen} options={{ headerShown: false }} />
-      <HomeStack.Screen name="DetailStack" component={DetailScreen} options={{ 
-        title: 'Detail Pengumuman',
-        headerTransparent: true,
-        headerTitleAlign: 'center',
-        headerTitleStyle: {
-          fontSize: 15,
-          fontWeight: '700',
-        },
-       }} />
+      <HomeStack.Screen name="DetailStack" component={DetailScreen} options={{ headerShown: false }} />
     </HomeStack.Navigator>
   );
 }
